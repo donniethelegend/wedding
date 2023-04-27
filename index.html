@@ -13,6 +13,7 @@
                 this.vid = document.querySelector("#vid");
 
                 marker.addEventListener('markerFound', function () {
+                    this.vid.attribute('visible',true);
                     this.vid.play();
                 }.bind(this));
 
@@ -60,7 +61,7 @@
         id="scene"
        
         gesture-detector>
-        
+
         <a-assets>
             <video src="https://donniethelegend.github.io/wedding/asset/asset.mp4"
                 preload="auto" id="vid" response-type="arraybuffer" loop
