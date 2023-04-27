@@ -1,7 +1,8 @@
 <!-- import aframe and then ar.js with image tracking / location based features -->
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-
+<script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
 
 <script>
     window.onload = function() {
@@ -53,7 +54,12 @@
         vr-mode-ui="enabled: false;"
         renderer='antialias: true; alpha: true; precision: medium;'
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-
+        
+        loading-screen="enabled: false;"
+      
+        id="scene"
+       
+        gesture-detector
         <a-assets>
             <video src="https://donniethelegend.github.io/wedding/asset/asset.mp4"
                 preload="auto" id="vid" response-type="arraybuffer" loop
@@ -71,8 +77,8 @@
                 position='0 0 0'
                 rotation='0 0 0'
                 scale="1 1 1"
-                width='16'
-                height='9'
+                gesture-handler
+                class="clickable"
                 >
             </a-video>
         </a-nft>
